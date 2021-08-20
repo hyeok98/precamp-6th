@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script>
+        function ccc() {
+            let timer = 10;
+
+            setInterval( () => {    //인터벌은 ??초동안 실행
+                if(timer > 0) {
+                    timer = timer - 1;
+
+                    document.getElementById('xxx').innerText = timer;
+                }
+            }, 1000)
+
+            // if(timer === 0) {
+            //     document.getElementById('ccc').
+            // }
+
+        }
+
+            // setTimeout( () => {     //타임아웃은 ??초뒤에 실행
+            //     console.log('실행')
+            // }, 3000)
+          
+        function aaa() {
+            const zzz = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+            document.getElementById("zzz").innerText = zzz
+            document.getElementById("zzz").style.color = "#"+zzz
+
+            ccc();
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <span id="zzz">000000</span>
+        <button onclick ="aaa()">인증번호 전송</button>
+    </div>
+    <div>
+        <span id="xxx">10</span>
+        <button onclick = "ccc()">인증완료</button>
+    </div>
+</body>
+</html>

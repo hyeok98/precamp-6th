@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>회원가입</title>
+    <link href="style/final.css" rel="stylesheet" />
+    <script>
+        function signup() {
+        const email = document.getElementById("email").value
+
+        if(email.includes("@")===false) {
+            alert("이메일 @가있는지 다시 확인해 주세요")  //가입하기생각하기
+        }
+    }
+
+        function changePhone(){
+            const phone1 = document.getElementById("phone1").value
+
+            if(phone1.length === 3) {
+                document.getElementById("phone2").focus() //focus 다음칸으로 포커스를 옮긴다?
+            }
+        }
+
+        function changePhone2(){
+            const phone1 = document.getElementById("phone2").value
+
+            if(phone1.length === 4) {
+                document.getElementById("phone3").focus() //focus 다음칸으로 포커스를 옮긴다? phone3에포커스를맟춘다
+             }
+        }
+
+        function ccc() {
+            let timer = 300;
+
+            setInterval( () => {    //인터벌은 ??초동안 실행
+                if(timer > 0) {
+                    timer = timer - 1;
+
+                    document.getElementById('xxx').innerText = timer;
+                }
+            }, 30000)
+
+           
+
+        }
+
+        function aaa() {
+            const zzz = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+            document.getElementById("zzz").innerText = zzz
+            document.getElementById("zzz").style.color = "#"+zzz
+
+            ccc();
+        }
+    
+    </script>
+</head>
+<body>
+    <div class="background">
+        <div class="wrapper">
+            <div>회원가입</div>
+            <div class="text">
+                <input id="email" type="text" placeholder="이메일을 입력해 주세요" onchange="checkValidation()" onkeyup="onchange()" /> <br>
+                <input type="text" placeholder="이메일을 입력해 주세요" /> <br>
+                <input type="text" placeholder="이메일을 입력해 주세요" /> <br>
+                <input type="text" placeholder="이메일을 입력해 주세요" /> 
+            </div>
+            <div class="phone">
+                <input id="phone1" type="text" size="3" onchange="changePhone()" onkeyup="onchange()"/> -  <!-- onkeyup 눌렀을떄?-->
+                 <input id="phone2" type="text" size="4" onchange="changePhone2()" onkeyup="onchange()" /> - 
+                 <input id="phone3" type="text" size ="4" />
+            </div>
+            <div>
+                <span id="zzz">000000</span>
+                 <button onclick ="aaa()">인증번호 전송</button>
+            </div>
+            <div>
+                <span id="xxx">3:00</span>
+                <button onclick = "ccc()">인증확인</button>
+            </div>
+            <div>
+                <select>
+                    <option>지역을 선택하세요</option>
+                    <option>서울</option>
+                    <option>경기</option>
+                    <option>강원</option>
+                </select>
+            </div>
+            <div>
+                <input type="radio">여성 
+                <input type="radio">남성 
+
+            </div>
+            <div>
+                <input type="checkbox"/>이용약관 개인정보 수집 및,이용, 마케팅 활용 선택에 모두 동의합니다.
+            </div>
+            <div>
+                <button>가입하기</button>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

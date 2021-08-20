@@ -1,0 +1,24 @@
+* {
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+.background {
+    width: 1300px;
+    height: 800px;
+    padding-left: 20px;
+	padding-top: 20px;
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+    align-content: center;
+    background-color: aqua;
+}
+
+.wrapper {
+    background-color: black;
+    border: solid 1px black;
+    width: 200px;
+    height: 200px;
+
+}
